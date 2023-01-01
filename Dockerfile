@@ -1,22 +1,21 @@
-FROM node:17.1.0
+# Set the base image to Node 17.1.0-alpine
+FROM node:17.1.0-alpine
 
+# Set the working directory for all subsequent commands
 WORKDIR /app/admin
 
+# Copy the package.json and yarn lock files to the working directory
 COPY package.json .
 COPY yarn.* .
 
-RUN rm -rf node_modules
+# Run the apk update command to update package information and then install the dependencies listed in the yarn lock file
+RUN apk update && yarn
 
-RUN apt-get update
-
-RUN npm install -g npm@8.1.2
-
-RUN npm install sharp
-
-RUN npm install
-
+# Copy all files in the current directory (.) to the working directory in the container
 COPY . .
 
-RUN npm run build 
+# Run the yarn build command to build the application
+RUN yarn build
 
-CMD [ "npm", "run", "serve"]
+# Set the default command to serve the built application
+CMD [ "yarn", "serve"]

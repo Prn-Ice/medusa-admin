@@ -47,7 +47,7 @@ Follow our [quickstart guide](https://docs.medusajs.com/quickstart/quick-start) 
    ```
    yarn start
    ```
-4. **Go to [http://localhost:7000](http://localhost:7000)**
+4. **Go to [http://localhost:7700](http://localhost:7700)**
 
 Back in your Medusa engine installation directory, you can create your own user for the admin by running:
 

@@ -18,4 +18,4 @@ COPY . .
 RUN yarn build
 
 # Set the default command to serve the built application
-CMD [ "yarn", "serve"]
+ENTRYPOINT [ "yarn", "serve"]

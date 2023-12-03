@@ -1,5 +1,5 @@
 # Set the base image to Node 17.1.0-alpine
-FROM node:17.1.0-alpine
+FROM node:21.0.0-alpine
 
 # Set the working directory for all subsequent commands
 WORKDIR /app/admin
